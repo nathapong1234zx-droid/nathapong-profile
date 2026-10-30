@@ -16,4 +16,5 @@
 - **GitHub Pages** สำหรับ Hosting เว็บไซต์
 
 ## 💻 เผยแพร่ผ่าน GitHub Pages
-สามารถเข้าชมเว็บไซต์จริงได้ที่ GitHub Pages
+สามารถเข้าชมเว็บไซต์จริงได้ที่: [https://nathapong1234zx-droid.github.io/nathapong-profile/](https://nathapong1234zx-droid.github.io/nathapong-profile/)
+
