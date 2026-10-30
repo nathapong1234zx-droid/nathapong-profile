@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>นายนัทธพงศ์ แก้วตา | สชอ.1/1 - Personal Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="profile.png">
+
+  <!-- Google Fonts: Prompt & Kanit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif'],
+            display: ['Kanit', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              300: '#7cc8fb',
+              400: '#36abf6',
+              500: '#0c8fe9',
+              600: '#0270c7',
+              700: '#0359a1',
+              800: '#074c85',
+              900: '#0c3f6e'
+            }
+          },
+          animation: {
+            'float': 'float 5s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'gradient': 'gradient 8s ease infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            gradient: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+    }
+    .font-display {
+      font-family: 'Kanit', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .glass-dark {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .bg-mesh {
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.2) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(236, 72, 153, 0.12) 0px, transparent 50%);
+    }
+    .avatar-glow {
+      box-shadow: 0 0 50px rgba(59, 130, 246, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-white bg-mesh relative overflow-x-hidden">
+
+  <!-- Ambient Glow Blobs -->
+  <div class="fixed top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+      <nav class="glass-dark rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg shadow-black/20">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl overflow-hidden ring-2 ring-cyan-400/50 p-0.5 bg-slate-800">
+            <img src="profile.png" alt="Profile" class="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform">
+          </div>
+          <div>
+            <span class="font-display font-bold text-lg tracking-wide text-white group-hover:text-cyan-400 transition-colors">นัทธพงศ์</span>
+            <span class="text-xs block text-cyan-400 font-medium">สชอ.1/1</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+          <a href="#home" class="hover:text-cyan-400 transition-colors">หน้าแรก</a>
+          <a href="#about" class="hover:text-cyan-400 transition-colors">เกี่ยวกับฉัน</a>
+          <a href="#skills" class="hover:text-cyan-400 transition-colors">ทักษะ & ความสนใจ</a>
+          <a href="#education" class="hover:text-cyan-400 transition-colors">การศึกษา</a>
+          <a href="#contact" class="hover:text-cyan-400 transition-colors">ติดต่อ</a>
+        </div>
+
+        <!-- Action / CTA Button -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#contact" class="px-4 py-2 rounded-xl text-sm font-medium bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/25 transition-all hover:scale-105 active:scale-95">
+            <i class="fa-solid fa-paper-plane mr-1.5 text-xs"></i> ทักทายกัน
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobileMenu" class="hidden md:hidden mt-2 glass-dark rounded-2xl p-4 flex flex-col gap-3 text-sm font-medium text-slate-300 shadow-xl">
+        <a href="#home" class="p-2 hover:bg-slate-800/60 rounded-lg hover:text-cyan-400 transition-colors">หน้าแรก</a>
+        <a href="#about" class="p-2 hover:bg-slate-800/60 rounded-lg hover:text-cyan-400 transition-colors">เกี่ยวกับฉัน</a>
+        <a href="#skills" class="p-2 hover:bg-slate-800/60 rounded-lg hover:text-cyan-400 transition-colors">ทักษะ & ความสนใจ</a>
+        <a href="#education" class="p-2 hover:bg-slate-800/60 rounded-lg hover:text-cyan-400 transition-colors">การศึกษา</a>
+        <a href="#contact" class="p-2 hover:bg-slate-800/60 rounded-lg hover:text-cyan-400 transition-colors">ติดต่อ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen pt-32 pb-20 flex items-center justify-center relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Text Column -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium shadow-inner">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span>ยินดีต้อนรับสู่เว็บไซต์แนะนำตัว</span>
+            <span class="text-slate-500">|</span>
+            <span class="font-semibold text-white">ห้อง สชอ.1/1</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
+            สวัสดีครับ, ผม <br class="hidden sm:block">
+            <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
+              นายนัทธพงศ์ แก้วตา
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+            นักศึกษาชั้น <span class="text-cyan-400 font-medium">สชอ.1/1</span> ผู้มีความหลงใหลในเทคโนโลยี นวัตกรรม และการพัฒนาตนเอง พร้อมเปิดรับการเรียนรู้สิ่งใหม่ๆ อยู่เสมอ
+          </p>
+
+          <!-- Buttons & Socials -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#about" class="px-6 py-3 rounded-xl font-medium bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/25 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+              <i class="fa-solid fa-user-astronaut"></i>
+              <span>ทำความรู้จักเพิ่มเติม</span>
+            </a>
+            <a href="#contact" class="px-6 py-3 rounded-xl font-medium glass-dark hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-slate-500 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+              <i class="fa-regular fa-envelope"></i>
+              <span>ช่องทางติดต่อ</span>
+            </a>
+          </div>
+
+          <!-- Quick Stats Cards -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-6 max-w-lg mx-auto lg:mx-0">
+            <div class="glass-dark p-3.5 rounded-xl border border-slate-800 text-center">
+              <p class="text-xs text-slate-400 font-light">ระดับชั้น</p>
+              <p class="text-base sm:text-lg font-bold text-cyan-400 font-display mt-0.5">สชอ.1/1</p>
+            </div>
+            <div class="glass-dark p-3.5 rounded-xl border border-slate-800 text-center">
+              <p class="text-xs text-slate-400 font-light">สถานะ</p>
+              <p class="text-base sm:text-lg font-bold text-emerald-400 font-display mt-0.5">กำลังศึกษา</p>
+            </div>
+            <div class="glass-dark p-3.5 rounded-xl border border-slate-800 text-center">
+              <p class="text-xs text-slate-400 font-light">ความสนใจ</p>
+              <p class="text-base sm:text-lg font-bold text-indigo-400 font-display mt-0.5">Tech & Code</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avatar / Visual Column -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative group">
+            <!-- Glow background -->
+            <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 rounded-full blur-2xl opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+            
+            <!-- Card Wrapper -->
+            <div class="relative glass-dark p-6 rounded-3xl border border-slate-700/80 shadow-2xl animate-float">
+              <!-- Image frame -->
+              <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-slate-800 to-slate-900 border-2 border-cyan-400/40 relative flex items-center justify-center avatar-glow">
+                <img src="profile.png" alt="นายนัทธพงศ์ แก้วตา" class="w-full h-full object-contain p-2 hover:scale-105 transition duration-500">
+              </div>
+
+              <!-- Student Badge Overlay -->
+              <div class="mt-4 text-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs text-slate-300">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span>นายนัทธพงศ์ แก้วตา (สชอ.1/1)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 text-sm font-semibold tracking-wider uppercase">About Me</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2">เกี่ยวกับฉัน</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Content Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="glass-dark p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition-all">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-2">ข้อมูลส่วนตัว</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            ชื่อ <strong>นายนัทธพงศ์ แก้วตา</strong> ปัจจุบันกำลังศึกษาอยู่ระดับชั้น <strong>สชอ.1/1</strong> เป็นคนที่มีความมุ่งมั่น ตั้งใจเรียนรู้ พร้อมค้นหาและเปิดรับประสบการณ์ใหม่ๆ เพื่อพัฒนาตนเองอย่างต่อเนื่อง
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-dark p-6 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-2">เป้าหมายและวิสัยทัศน์</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            ตั้งเป้าหมายในการพัฒนาทักษะทางด้านเทคโนโลยี การเขียนโปรแกรม และระบบคอมพิวเตอร์ เพื่อนำความรู้ไปต่อยอดในการสร้างสรรค์โครงงานและนวัตกรรมที่มีประโยชน์ต่อสังคม
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-dark p-6 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all duration-300 hover:-translate-y-1.5 group">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition-all">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-2">ทัศนคติการทำงาน</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            เชื่อมั่นในการทำงานร่วมกันเป็นทีม (Teamwork) มีความรับผิดชอบ ตรงต่อเวลา รับฟังความคิดเห็นของผู้อื่น และพร้อมปรับตัวเข้ากับสภาพแวดล้อมใหม่ๆ เสมอ
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills & Interests -->
+  <section id="skills" class="py-24 bg-slate-900/40 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 text-sm font-semibold tracking-wider uppercase">Skills & Interests</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2">ทักษะและความสนใจ</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Technical Skills -->
+        <div class="glass-dark p-6 sm:p-8 rounded-3xl border border-slate-800">
+          <h3 class="text-xl font-display font-bold text-white mb-6 flex items-center gap-3">
+            <span class="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <i class="fa-solid fa-laptop-code"></i>
+            </span>
+            ทักษะด้านเทคโนโลยี & ดิจิทัล
+          </h3>
+
+          <div class="space-y-5">
+            <!-- Skill 1 -->
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-200">Git & Version Control (GitHub / GitHub CLI)</span>
+                <span class="text-cyan-400">พื้นฐานดี</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-200">Web Basics (HTML5 / CSS3 / Web Design)</span>
+                <span class="text-cyan-400">กำลังเรียนรู้ & ฝึกฝน</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-200">Computer Hardware & Troubleshooting</span>
+                <span class="text-cyan-400">ทักษะเชิงปฏิบัติ</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full" style="width: 70%"></div>
+              </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1.5">
+                <span class="text-slate-200">โปรแกรมและเครื่องมือพื้นฐาน (VS Code / Office)</span>
+                <span class="text-cyan-400">ชำนาญ</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills & Interests -->
+        <div class="glass-dark p-6 sm:p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
+          <div>
+            <h3 class="text-xl font-display font-bold text-white mb-6 flex items-center gap-3">
+              <span class="p-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                <i class="fa-solid fa-compass-drafting"></i>
+              </span>
+              ความสนใจ & สิ่งที่ชอบศึกษา
+            </h3>
+
+            <!-- Tags Grid -->
+            <div class="flex flex-wrap gap-2.5 mb-6">
+              <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-xs sm:text-sm text-cyan-300">
+                <i class="fa-solid fa-microchip mr-1 text-cyan-400"></i> อิเล็กทรอนิกส์ & IoT
+              </span>
+              <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-xs sm:text-sm text-blue-300">
+                <i class="fa-solid fa-code mr-1 text-blue-400"></i> Web Development
+              </span>
+              <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-xs sm:text-sm text-purple-300">
+                <i class="fa-solid fa-robot mr-1 text-purple-400"></i> AI & นวัตกรรมใหม่
+              </span>
+              <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-xs sm:text-sm text-emerald-300">
+                <i class="fa-solid fa-gamepad mr-1 text-emerald-400"></i> Gaming & เทคโนโลยี
+              </span>
+              <span class="px-3.5 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-xs sm:text-sm text-amber-300">
+                <i class="fa-solid fa-palette mr-1 text-amber-400"></i> Graphic & UI Design
+              </span>
+            </div>
+          </div>
+
+          <!-- Quote Card -->
+          <div class="p-4 rounded-2xl bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border border-blue-500/20">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-quote-left text-2xl text-cyan-400 mt-1"></i>
+              <div>
+                <p class="text-sm text-slate-200 italic font-light">
+                  "การเรียนรู้ไม่มีที่สิ้นสุด ทุกความพยายามในวันนี้คือบันไดสู่ความสำเร็จในวันข้างหน้า"
+                </p>
+                <p class="text-xs text-cyan-400 font-medium mt-1.5">- นายนัทธพงศ์ แก้วตา (สชอ.1/1)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education Timeline -->
+  <section id="education" class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 text-sm font-semibold tracking-wider uppercase">Education</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2">ประวัติการศึกษา</h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Timeline Card -->
+      <div class="relative border-l-2 border-cyan-500/30 ml-4 sm:ml-8 pl-6 sm:pl-8 space-y-10">
+        
+        <!-- Item 1 (Present) -->
+        <div class="relative group">
+          <!-- Bullet -->
+          <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-4 border-cyan-400 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-dark p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                ปัจจุบัน
+              </span>
+              <span class="text-xs text-slate-400 font-light">ปีการศึกษาปัจจุบัน</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-white">ระดับชั้น สชอ.1/1</h3>
+            <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+              ศึกษาหลักสูตรวิชาชีพ มุ่งเน้นการฝึกทักษะเฉพาะทาง ปฏิบัติการจริง การคิดวิเคราะห์ และการประยุกต์ใช้องค์ความรู้เพื่อต่อยอดสู่ระดับมืออาชีพ
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-slate-900/60 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-cyan-400 text-sm font-semibold tracking-wider uppercase">Get In Touch</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mt-2">ช่องทางติดต่อ</h2>
+        <p class="text-slate-400 text-sm mt-3">สามารถติดต่อหรือส่งข้อความถึงผมได้ตามช่องทางด้านล่างนี้ครับ</p>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Contact Info Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+        
+        <!-- Email -->
+        <div class="glass-dark p-6 rounded-2xl border border-slate-800 flex items-center justify-between group hover:border-cyan-500/50 transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400">อีเมล (Email)</p>
+              <p class="text-sm font-medium text-white break-all">nathapong1234zx@gmail.com</p>
+            </div>
+          </div>
+          <button onclick="copyEmail()" title="คัดลอกอีเมล" class="p-2.5 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-white text-slate-300 transition-colors">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+
+        <!-- GitHub -->
+        <a href="https://github.com/nathapong1234zx-droid" target="_blank" rel="noopener noreferrer" class="glass-dark p-6 rounded-2xl border border-slate-800 flex items-center justify-between group hover:border-blue-500/50 transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-xl">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400">GitHub Profile</p>
+              <p class="text-sm font-medium text-white">@nathapong1234zx-droid</p>
+            </div>
+          </div>
+          <span class="p-2.5 text-slate-400 group-hover:text-blue-400 transition-colors">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+        </a>
+
+      </div>
+
+      <!-- Quick Message Form -->
+      <div class="glass-dark p-6 sm:p-8 rounded-3xl border border-slate-800">
+        <h3 class="text-lg font-display font-semibold text-white mb-4 flex items-center gap-2">
+          <i class="fa-regular fa-comment-dots text-cyan-400"></i>
+          ส่งข้อความทักทาย
+        </h3>
+        
+        <form id="contactForm" onsubmit="handleSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs text-slate-300 mb-1.5">ชื่อของคุณ</label>
+              <input type="text" id="senderName" required placeholder="เช่น สมชาย ใจดี" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition">
+            </div>
+            <div>
+              <label class="block text-xs text-slate-300 mb-1.5">อีเมลหรือช่องทางติดต่อกลับ</label>
+              <input type="text" id="senderContact" required placeholder="เช่น yourname@email.com หรือ Line ID" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs text-slate-300 mb-1.5">ข้อความ</label>
+            <textarea id="senderMsg" rows="4" required placeholder="พิมพ์ข้อความของคุณที่นี่..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"></textarea>
+          </div>
+
+          <div class="flex items-center justify-between pt-2">
+            <p id="formFeedback" class="text-xs text-emerald-400 hidden"></p>
+            <button type="submit" class="px-6 py-2.5 rounded-xl text-sm font-medium bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/25 transition-all hover:scale-105 active:scale-95 ml-auto flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>ส่งข้อความ</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 bg-slate-950 text-center text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 <strong>นายนัทธพงศ์ แก้วตา</strong> (สชอ.1/1) - All rights reserved.</p>
+      <p class="flex items-center gap-1.5">
+        <span>สร้างด้วยความตั้งใจ และเผยแพร่ผ่าน</span>
+        <span class="text-cyan-400 font-semibold"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification element -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-dark px-5 py-3 rounded-2xl border border-cyan-500/40 text-cyan-300 text-sm flex items-center gap-3 shadow-2xl">
+    <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+    <span id="toastMsg">คัดลอกอีเมลเรียบร้อยแล้ว!</span>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on click link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Copy Email Toast
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('nathapong1234zx@gmail.com').then(() => {
+        showToast('คัดลอกอีเมล nathapong1234zx@gmail.com แล้ว');
+      });
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const contact = document.getElementById('senderContact').value;
+      const msg = document.getElementById('senderMsg').value;
+
+      // Construct mailto link as fallback to send real email
+      const subject = encodeURIComponent(`ข้อความจากเว็บไซต์แนะนำตัว: โดย ${name}`);
+      const body = encodeURIComponent(`ชื่อผู้ส่ง: ${name}\nช่องทางติดต่อ: ${contact}\n\nข้อความ:\n${msg}`);
+      
+      showToast('ขอบคุณสำหรับข้อความ! กำลังเปิดโปรแกรมอีเมล...');
+      setTimeout(() => {
+        window.location.href = `mailto:nathapong1234zx@gmail.com?subject=${subject}&body=${body}`;
+      }, 800);
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+</body>
+</html>
